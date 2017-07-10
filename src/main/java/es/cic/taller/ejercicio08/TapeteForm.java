@@ -15,7 +15,7 @@ public class TapeteForm extends FormLayout {
 	
 	public TapeteForm(MyUI myUI) {
 		this.myUI = myUI;
-		
+		System.out.println("prueba de cambio");
 		addComponents(carta1, carta2, carta3, carta4);
 	}
 	
@@ -25,4 +25,5 @@ public class TapeteForm extends FormLayout {
 		carta3.setValue(tapete.getCarta3().toString());
 		carta4.setValue(tapete.getCarta4().toString());
 	}
+	
 }

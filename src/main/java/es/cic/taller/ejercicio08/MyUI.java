@@ -8,9 +8,11 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
 
 import es.cic.taller.ejercicio08.mus.Baraja;
 import es.cic.taller.ejercicio08.mus.Tapete;
@@ -35,7 +37,19 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
     	
-        layout.addComponents(tapete1, tapete2, tapete3, tapete4);
+    	TabSheet sample = new TabSheet();
+        sample.setHeight(100.0f, Unit.PERCENTAGE);
+        sample.addStyleName(ValoTheme.TABSHEET_FRAMED);
+        sample.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
+    	
+    	
+        sample.addTab(tapete1, "Jugador1");
+        sample.addTab(tapete2, "Jugador2");
+        sample.addTab(tapete3, "Jugador3");
+        sample.addTab(tapete4, "Jugador4");
+        
+        //layout.addComponents(tapete1, tapete2, tapete3, tapete4);
+        layout.addComponent(sample);
         
         setContent(layout);
         

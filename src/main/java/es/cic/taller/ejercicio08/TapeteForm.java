@@ -19,6 +19,10 @@ public class TapeteForm extends FormLayout {
 		addComponents(carta1, carta2, carta3, carta4);
 	}
 	
+	
+	
+	
+	/* Esto es un comentario */
 	public void setTapete(Tapete tapete) {
 		carta1.setValue(tapete.getCarta1().toString());
 		carta2.setValue(tapete.getCarta2().toString());

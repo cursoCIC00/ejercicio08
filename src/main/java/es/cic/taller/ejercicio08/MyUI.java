@@ -12,6 +12,9 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
+import es.cic.taller.ejercicio08.mus.Baraja;
+import es.cic.taller.ejercicio08.mus.Tapete;
+
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
  * (or tab) or some part of a html page where a Vaadin application is embedded.
@@ -35,6 +38,19 @@ public class MyUI extends UI {
         layout.addComponents(tapete1, tapete2, tapete3, tapete4);
         
         setContent(layout);
+        
+        Baraja baraja = new Baraja();
+        
+        Tapete manoTapete1 = baraja.getTapete();
+        Tapete manoTapete2 = baraja.getTapete();
+        Tapete manoTapete3 = baraja.getTapete();
+        Tapete manoTapete4 = baraja.getTapete();
+        
+        tapete1.setTapete(manoTapete1);
+        tapete2.setTapete(manoTapete2);
+        tapete3.setTapete(manoTapete3);
+        tapete4.setTapete(manoTapete4);
+        
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
